@@ -1,6 +1,7 @@
 require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/card'
+require 'pry'
 
 class Deck
 
@@ -16,11 +17,18 @@ class Deck
   end
 
   def high_ranking_cards
-    @cards.find_all {|card| card.rank >= 11}
+
+    @cards.find_all do |card|
+
+      card.rank >= 11
+      # binding.pry
+    end
   end
 
   def percent_high_ranking
+    
     (( high_ranking_cards.length.to_f / @cards.length.to_f) * 100).round(2)
+
   end
 
   def remove_card
