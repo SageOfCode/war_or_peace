@@ -6,7 +6,6 @@ require './lib/deck'
 class DeckTest < Minitest::Test
 
   def setup
-      # @deck = Deck.new()
       @card1 = Card.new(:diamond, 'Queen', 12)
       @card2 = Card.new(:spade, '3', 3)
       @card3 = Card.new(:heart, 'Ace', 14)
@@ -29,5 +28,5 @@ class DeckTest < Minitest::Test
   def test_percent_of_high_ranking
     assert_equal 66.67, @deck.percent_high_ranking
   end
-  
+
 end
