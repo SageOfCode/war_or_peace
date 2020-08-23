@@ -15,11 +15,28 @@ class PlayerTest < Minitest::Test
   end
 
   def test_it_exists
-    assert_instance_of Deck, @deck
+    assert_instance_of Player, @player
   end
 
-  def test_it_exists
-    assert_instance_of Card.new, @card1
+  def test_player_has_a_name
+    assert_equal 'Clarisa', @player.name
   end
 
+  def test_player_has_a_deck
+    assert_equal @deck, @player.deck
+  end
+
+  def test_if_player_lost
+    assert_equal false, @player.has_lost?
+    @player.deck.remove_card
+    # require "pry"; binding.pry
+    assert_equal 2, @player.deck.cards.count
+    assert_equal false, @player.has_lost?
+    @player.deck.remove_card
+    assert_equal 1, @player.deck.cards.count
+    assert_equal false, @player.has_lost?
+    @player.deck.remove_card
+    assert_equal 0, @player.deck.cards.count
+    assert_equal true, @player.has_lost?
+  end
 end
