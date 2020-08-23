@@ -25,4 +25,9 @@ class TurnTest < Minitest::Test
   def test_it_takes_a_turn
     assert_instance_of Turn, @turn
   end
+
+  # def test_player_1_has_turn
+  #   # require "pry"; binding.pry
+  #   assert_equal '("Megan", @deck1)', @turn.player1
+  # end
 end
