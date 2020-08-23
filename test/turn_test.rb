@@ -26,4 +26,7 @@ class TurnTest < Minitest::Test
     assert_instance_of Turn, @turn
   end
 
+  def test_case_name
+
+  end
 end
