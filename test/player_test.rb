@@ -29,7 +29,6 @@ class PlayerTest < Minitest::Test
   def test_if_player_lost
     assert_equal false, @player.has_lost?
     @player.deck.remove_card
-    # require "pry"; binding.pry
     assert_equal 2, @player.deck.cards.count
     assert_equal false, @player.has_lost?
     @player.deck.remove_card

@@ -11,19 +11,10 @@ class Player
   end
 
   def has_lost?
-    if @deck.cards.count == 0
-    @has_lost = true
-    else
-    @has_lost
-  end
-    # require "pry"; binding.pry
-    # @has_lost = true if @deck.cards.count == 0
-end
-  #
-  # def has_lost?
-  #   has_lost? = has_lost
-  # end
-
-
-
+      if @deck.cards.count == 0
+        @has_lost = true
+      else
+        @has_lost
+      end
+    end
 end
